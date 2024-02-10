@@ -1,0 +1,31 @@
+{
+  "name": "Awdarma",
+  "version": "0.0.4",
+  "description": "Awdarma.uz chrome extension",
+  "permissions": ["activeTab", "https://api.diyarbek.uz/*"],
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "js": ["content.js"]
+  }],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "assets/awdarma-logo.png"
+      ],
+      "matches": ["*://*/*"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/awdarma-logo.png",
+      "24": "assets/awdarma-logo.png",
+      "32": "assets/awdarma-logo.png"
+    },
+    "default_title": "Awdarma uz",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
